@@ -5,3 +5,7 @@ position: 0
 ---
 
 {{site.posts}}
+
+---
+
+{{content}}
