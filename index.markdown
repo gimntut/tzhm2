@@ -6,3 +6,5 @@ position: 0
 ---
 
 <a href="/index/nachalo">Начало</a>
+
+{{ . }}
