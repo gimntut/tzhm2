@@ -6,13 +6,21 @@ position: 0
 ---
 
 <a href="/index/nachalo">Начало</a>
+
 ----
+
 {{ . }}
+
 ----
+
 {{ site }}
+
 ----
+
 {{ site.Jekyll }}
+
 ----
+
 {{ site['Jekyll'] }}
 
 xxx
