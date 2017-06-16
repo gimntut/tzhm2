@@ -5,4 +5,4 @@ permalink: "/"
 position: 0
 ---
 
-<a href="/nachalo">Начало</a>
+<a href="/index/nachalo">Начало</a>
