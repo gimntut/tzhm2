@@ -5,4 +5,7 @@ position: 0
 ---
 
 {% for p in site.posts %}
+{{ p }}
+
+---
 {% endfor %}
