@@ -1,0 +1,13 @@
+---
+title: Tzhm2
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+  news:
+    title: news
+    output: true
