@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <style type="text/css">
+    table {
+        width: 95%;
+    }
+
+    #textarea {
+        width: 45vw;
+        height: 80vh;
+        border: 2px solid green;
+        margin: 0;
+    }
+    #output {
+        width: 45vw;
+        height: 80vh;
+        border: 1px dotted green;
+    }
+    </style>
+    <h1>Напиши слова</h1>
+    <table>
+        <tr>
+            <td><textarea id="textarea"></textarea></td>
+            <td>
+            	<div id="output" onclick="convert()">
+            	    0*0+6+0*4+5
+            	    <br> 0+0*0-7*0-7
+            	    <br> 0+0*0+6*0+0*0-7
+            	    <br> 0+0*6+2*6+7*2-3
+            	    <br> 0+0*4-6-2*0
+            	    <br> 0+1*8-4-7*5
+            	    <br> 0+3*6-7/2+2*8
+            	    <br> 0+3*6+6*6+1*2
+            	    <br> 0+4*7-6*4+3/2
+            	    <br> 0+5*0*5-9
+            	    <br> 0*8+2-6*0
+            	    <br> 0/5*2+3
+            	    <br> 0-2*0-4*0
+            	    <br> 0-2-6*0+3
+            	    <br> 0-2*2-7/2
+            	    <br> 0-2*2+6*2-7*0
+            	    <br> 0-2*2-3
+            	    <br> 0-6*7+3
+            	    <br> 0+7*0-2*0-2*0
+            	    <br> 0+7*0+7*0
+            	    <br> 0+7*0-5-2*0
+            	    <br> 0+7*2-7*6-3*0
+            	    <br> 0+7*5+8
+            	    <br> 0+6*6+3*8-5
+            	    <br> 0+6*6-0-2*0
+            	    <br> 0-5+1*6-2-6*0
+            	    <br> 0-5-6*2+1*0
+            	    <br> 0-5-6*2+1*0
+            	    <br> 0-5-7*6+2
+            	    <br> 0-5-3*2-6
+            	    <br> 0-5-3*4-6
+            	    <br> 0-5*4-0
+            	    <br> 0-5*3+6
+            	    <br> 0-3*8+2+6
+            	    <br> 0-3*2+6-3
+            	    <br> 0*4-3-2*0
+            	    <br> 0-1*2-7*0+6/2
+            	    <br> 0+9-6*6+0
+            	</div>
+            </td>
+        </tr>
+    </table>
+    <div>
+    </div>
+    <script type="text/javascript">
+    var letters = {
+        'а': '*0',
+        'я': '*5',
+
+        'э': '*1',
+        'е': '*6',
+
+        'о': '*2',
+        'ё': '*7',
+
+        'ы': '*3',
+        'и': '*8',
+
+        'у': '*4',
+        'ю': '*9',
+
+        'б': '+0',
+        'п': '-0',
+
+        'в': '+1',
+        'ф': '-1',
+
+        'г': '+2',
+        'к': '-2',
+
+        'д': '+3',
+        'т': '-3',
+
+        'ж': '+4',
+        'ш': '-4',
+
+        'з': '+5',
+        'с': '-5',
+
+        'р': '+6',
+        'л': '-6',
+
+        'м': '+7',
+        'н': '-7',
+
+        'ч': '+8',
+        'щ': '-8',
+
+        'х': '+9',
+        'ц': '-9',
+
+        'ъ': '/1',
+        'ь': '/2',
+        'й': '/5',
+        ' ': ' 0',
+    }
+
+    function convert() {
+        var textarea = document.getElementById('textarea');
+        var text = textarea.value;
+        if (!text) {
+            return;
+        }
+        var words = text.split('\n');
+        var newWords = [];
+        alert(words.length);
+        for (var i in words) {
+            var word = words[i].toLowerCase();
+            var newWord = '0';
+            for (var j in word) {
+                var letter = word[j];
+                newWord += letter in letters ? letters[letter] : letter;
+            }
+            newWords.push(newWord);
+        }
+        var output = document.getElementById('output');
+        output.innerText = newWords.join('\n<br>');
+    }
+    </script>
+</body>
+
+</html>
